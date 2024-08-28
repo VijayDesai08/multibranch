@@ -25,7 +25,6 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'docker-cred'){
-
                         sh 'docker push vijay008/multibranch-blue:v$BUILD_NUMBER'
 
                     }
@@ -36,7 +35,7 @@ pipeline {
         stage('deploy image') {
             steps {
                 sh 'docker stop tommycntr-blue || exit 1'
-                sh 'docker run --rm --name tommycntr-blue -d -p 8088:8080 vijay008/multibranch-blue:v$BUILD_NUMBER'
+                sh 'docker run --rm --name tommycntr-blue -d -p 8081:8080 vijay008/multibranch-blue:v$BUILD_NUMBER'
             }
         }
      }
