@@ -15,7 +15,7 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'docker-cred'){
-                        sh 'docker build -t vijay008/multibranch:v$BUILD_NUMBER .'
+                        sh 'docker build -t vijay008/multibranch-lightblue:v$BUILD_NUMBER .'
                     }
                 }
             }
@@ -25,7 +25,7 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'docker-cred'){
-                        sh 'docker push vijay008/multibranch:v$BUILD_NUMBER'
+                        sh 'docker push vijay008/multibranch-lightblue:v$BUILD_NUMBER'
                     }
                 }
             }
