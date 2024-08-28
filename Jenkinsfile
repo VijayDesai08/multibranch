@@ -14,7 +14,7 @@ pipeline {
         stage('build image') {
             steps {
                 script {
-                    withDockerRegistry(credentialsId: 'docker-cred')
+                    withDockerRegistry(credentialsId: 'docker-cred') {
                         sh 'docker build -t vijay008/multibranch-red:v$BUILD_NUMBER .'
 
                     }
