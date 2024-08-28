@@ -33,7 +33,7 @@ pipeline {
 
         stage('deploy image') {
             steps {
-                sh 'docker run --rm --name tommycntr -d -p 8085:8080 vijay008/multibranch-lightblue:v$BUILD_NUMBER'
+                sh 'docker run --rm --name tommycntr -d -p 8086:8080 vijay008/multibranch-lightblue:v$BUILD_NUMBER'
             }
         }
      }
