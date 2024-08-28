@@ -33,6 +33,7 @@ pipeline {
 
         stage('deploy image') {
             steps {
+                sh 'docker stop tommycntr-blue || exit 1'
                 sh 'docker run --rm --name tommycntr-blue -d -p 8086:8080 vijay008/multibranch-lightblue:v$BUILD_NUMBER'
             }
         }
